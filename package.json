@@ -17,13 +17,17 @@
     "nodemon": "^2.0.4",
     "path": "^0.12.7",
     "sharp": "^0.26.3",
+    "supertest": "^6.0.1",
     "validator": "^13.1.17"
   },
   "devDependencies": {},
   "scripts": {
-    "test": "jest --watch",
+    "test": "env-cmd -f ./config/test.env jest --watch --runInBand",
     "dev": "env-cmd -f ./config/dev.env nodemon src/index.js -e hbs,js,css,env",
     "start": "node src/index.js"
+  },
+  "jest": {
+    "testEnvironment": "node"
   },
   "author": "",
   "license": "ISC"
